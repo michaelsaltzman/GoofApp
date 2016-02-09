@@ -24,6 +24,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onLoginButtonTapped(sender: UIButton) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func onRegisterButtonTapped(sender: AnyObject) {
     
         let emailUsername = self.emailUsernameTextfield.text
