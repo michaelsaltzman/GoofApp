@@ -55,6 +55,8 @@ class CameraVC2: UIViewController, ImagePickerDelegate {
     
     func cancelButtonDidPress(){
         
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
