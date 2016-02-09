@@ -8,8 +8,11 @@
 
 import UIKit
 import ImagePicker
+import Firebase
 
 class ProfileVC: UIViewController, ImagePickerDelegate {
+    
+    let ref = Firebase(url: "https://goof-app.firebaseio.com")
     
     @IBOutlet weak var profilePictureButtonLabel: UIButton!
 
@@ -37,13 +40,17 @@ class ProfileVC: UIViewController, ImagePickerDelegate {
     }
     
     func cancelButtonDidPress(){
+        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
-    
     
     func doneButtonDidPress(images: [UIImage]){
         
         self.dismissViewControllerAnimated(true) { () -> Void in
+            
+            NSUserDefaults.standardUserDefaults().setObject(images[0], forKey: "userProfileImage")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
             self.profilePictureButtonLabel.setImage(images[0], forState: .Normal)
         }
         
