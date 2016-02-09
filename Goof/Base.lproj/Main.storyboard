@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bWL-IT-36L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bWL-IT-36L">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -61,6 +61,13 @@
                                 <state key="normal" title="REGISTER"/>
                                 <connections>
                                     <segue destination="7UK-5R-xQf" kind="presentation" id="sgL-LI-Hgv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciP-HK-0bX">
+                                <rect key="frame" x="270" y="384" width="55" height="30"/>
+                                <state key="normal" title="To Feed"/>
+                                <connections>
+                                    <segue destination="1Yc-hE-fBu" kind="show" id="Rzc-oy-u2O"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -213,12 +220,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKV-RP-gpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0zb-Nz-oEW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="982"/>
+            <point key="canvasLocation" x="1838" y="1020"/>
         </scene>
-        <!--CameraVC-->
+        <!--CameraVC2-->
         <scene sceneID="7TV-Fb-ftL">
             <objects>
-                <viewController id="DC1-SF-xIN" customClass="CameraVC" customModule="Goof" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DC1-SF-xIN" customClass="CameraVC2" customModule="Goof" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tTr-5k-xZc"/>
                         <viewControllerLayoutGuide type="bottom" id="rR9-Sy-ebj"/>
@@ -228,10 +235,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="zoA-eU-EdC" kind="show" identifier="razaSegue" id="nNs-qK-N13"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y5J-Vf-QGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3256" y="285"/>
+            <point key="canvasLocation" x="3242" y="285"/>
         </scene>
         <!--FeedVC-->
         <scene sceneID="1I4-Oi-4yn">
@@ -255,9 +265,23 @@
                                     <tabBarItem title="Profile" id="oZT-U4-SlD"/>
                                 </items>
                             </tabBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50c-WT-bbL">
+                                <rect key="frame" x="263" y="140" width="74" height="30"/>
+                                <state key="normal" title="To Camera"/>
+                                <connections>
+                                    <segue destination="DC1-SF-xIN" kind="show" id="Icn-PZ-teR"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HcD-jc-hK5">
+                                <rect key="frame" x="175" y="249" width="240" height="239"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="tempImageView" destination="HcD-jc-hK5" id="u4U-0J-WDm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSF-RV-Sgk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -291,7 +315,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPW-CN-4in" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3965" y="285"/>
+            <point key="canvasLocation" x="3242" y="1029"/>
+        </scene>
+        <!--Post ImageVC-->
+        <scene sceneID="Omb-2O-F3w">
+            <objects>
+                <viewController id="zoA-eU-EdC" customClass="PostImageVC" customModule="Goof" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZiM-9i-zJ2"/>
+                        <viewControllerLayoutGuide type="bottom" id="zyn-oB-5Vy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Px5-fr-cC8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TqU-ZH-5u3">
+                                <rect key="frame" x="180" y="145" width="240" height="309"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhq-uD-xzI">
+                                <rect key="frame" x="389" y="101" width="31" height="30"/>
+                                <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="onPostButtonTapped:" destination="zoA-eU-EdC" eventType="touchUpInside" id="YDz-zW-5OE"/>
+                                    <segue destination="1Yc-hE-fBu" kind="show" id="a3l-lH-BnU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uge-ED-7SM">
+                                <rect key="frame" x="180" y="101" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancelButtonTapped:" destination="zoA-eU-EdC" eventType="touchUpInside" id="x68-QV-HnB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="TqU-ZH-5u3" id="QFm-7I-6Uf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hyc-ef-Zhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3948" y="285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M3L-d5-iSA">
@@ -312,4 +377,7 @@
             <point key="canvasLocation" x="1026" y="285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="a3l-lH-BnU"/>
+    </inferredMetricsTieBreakers>
 </document>

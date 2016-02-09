@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084CA4581C6986FE00EF332A /* CameraVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084CA4571C6986FE00EF332A /* CameraVC2.swift */; };
+		084CA45A1C69890200EF332A /* PostImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084CA4591C69890200EF332A /* PostImageVC.swift */; };
 		08CE63181C641D3200D3D035 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CE63171C641D3200D3D035 /* Profile.swift */; };
 		08CE631A1C643EB600D3D035 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CE63191C643EB600D3D035 /* Login.swift */; };
 		08CE631C1C64403700D3D035 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CE631B1C64403700D3D035 /* LoginViewController.swift */; };
@@ -20,11 +22,12 @@
 		B9D3B12D1C640F20008180B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D3B12B1C640F20008180B8 /* LaunchScreen.storyboard */; };
 		B9D3B1351C640FFE008180B8 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D3B1341C640FFE008180B8 /* Posts.swift */; };
 		FE5F8AED1C658DE800BD4D27 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5F8AEC1C658DE800BD4D27 /* ProfileVC.swift */; };
-		FE5F8AEF1C696B5300BD4D27 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5F8AEE1C696B5300BD4D27 /* CameraVC.swift */; };
 		FE5F8AF11C696B9100BD4D27 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5F8AF01C696B9100BD4D27 /* FeedVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		084CA4571C6986FE00EF332A /* CameraVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC2.swift; sourceTree = "<group>"; };
+		084CA4591C69890200EF332A /* PostImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageVC.swift; sourceTree = "<group>"; };
 		08CE63171C641D3200D3D035 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		08CE63191C643EB600D3D035 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		08CE631B1C64403700D3D035 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +45,6 @@
 		B9D3B1341C640FFE008180B8 /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		E1B1953ABEC5E02E0B3B3B9F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FE5F8AEC1C658DE800BD4D27 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		FE5F8AEE1C696B5300BD4D27 /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraVC.swift; path = ../../CameraVC.swift; sourceTree = "<group>"; };
 		FE5F8AF01C696B9100BD4D27 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,8 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				B9D3B1231C640F20008180B8 /* Main.storyboard */,
+				084CA4591C69890200EF332A /* PostImageVC.swift */,
 				FE5F8AF01C696B9100BD4D27 /* FeedVC.swift */,
-				FE5F8AEE1C696B5300BD4D27 /* CameraVC.swift */,
+				084CA4571C6986FE00EF332A /* CameraVC2.swift */,
 				FE5F8AEC1C658DE800BD4D27 /* ProfileVC.swift */,
 				08CE631B1C64403700D3D035 /* LoginViewController.swift */,
 				08CE63421C657AAB00D3D035 /* RegisterViewController.swift */,
@@ -248,7 +251,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				08CE631C1C64403700D3D035 /* LoginViewController.swift in Sources */,
-				FE5F8AEF1C696B5300BD4D27 /* CameraVC.swift in Sources */,
 				FE5F8AF11C696B9100BD4D27 /* FeedVC.swift in Sources */,
 				B9D3B1281C640F20008180B8 /* Goof.xcdatamodeld in Sources */,
 				08CE63431C657AAB00D3D035 /* RegisterViewController.swift in Sources */,
@@ -256,6 +258,8 @@
 				FE5F8AED1C658DE800BD4D27 /* ProfileVC.swift in Sources */,
 				08CE63181C641D3200D3D035 /* Profile.swift in Sources */,
 				B9D3B1351C640FFE008180B8 /* Posts.swift in Sources */,
+				084CA4581C6986FE00EF332A /* CameraVC2.swift in Sources */,
+				084CA45A1C69890200EF332A /* PostImageVC.swift in Sources */,
 				B9D3B1201C640F20008180B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,10 +14,10 @@ class Posts: NSObject {
     var postedImage = UIImage()
     var commentsArray = [String]()
     var likesCount:Int?
-    var postUpdated: NSDate?
+    var postUpdated: NSDateFormatter?
 //    var postingProfile = Profile()          add once Profile object model has been added
     
-    init(addImage:UIImage, timeStamp : NSDate) {
+    init(addImage:UIImage, timeStamp : NSDateFormatter) {
         self.postedImage = addImage
         self.postUpdated = timeStamp
     }

@@ -16,7 +16,7 @@ class Profile: NSObject {
     var arrayOfPosts = [] // type Posts
     var friendsArray = [] // type Profile
     var profileImage: UIImage?
-    var profileLastUpdated: NSDate?
+    var profileLastUpdated: NSDateFormatter?
     
     
     init(inputUsername : String, inputPassword : String, profilePicture : UIImage) {
@@ -34,7 +34,7 @@ class Profile: NSObject {
         self.profileImage = updatedPicture
     }
     
-    func addPost(newPost : Posts, timeStamp : NSDate) {
+    func addPost(newPost : Posts, timeStamp : NSDateFormatter) {
         
         self.arrayOfPosts.arrayByAddingObject(newPost)
         self.profileLastUpdated = timeStamp

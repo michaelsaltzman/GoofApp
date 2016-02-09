@@ -10,10 +10,17 @@ import UIKit
 
 class FeedVC: UIViewController {
 
+    @IBOutlet weak var tempImageView: UIImageView!
+    
+    var incomingNewPostImage = UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+       tempImageView.image = incomingNewPostImage
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +28,7 @@ class FeedVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func unwindToFeed(segue: UIStoryboardSegue, post: Posts) {}
 
     /*
     // MARK: - Navigation
