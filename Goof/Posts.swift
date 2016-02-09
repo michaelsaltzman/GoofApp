@@ -17,7 +17,12 @@ class Posts: NSObject {
     var postUpdated: NSDateFormatter?
 //    var postingProfile = Profile()          add once Profile object model has been added
     
-    init(addImage:UIImage, timeStamp : NSDateFormatter) {
+    func createPost(addImage:UIImage, timeStamp : NSDateFormatter) {
+        self.postedImage = addImage
+        self.postUpdated = timeStamp
+    }
+    
+    func addPostToFeed(addImage:UIImage, timeStamp : NSDateFormatter) {
         self.postedImage = addImage
         self.postUpdated = timeStamp
     }

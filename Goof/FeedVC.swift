@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedVC: UIViewController {
 
+    let ref = Firebase(url: "https://goof-app.firebaseio.com")
+    
     @IBOutlet weak var tempImageView: UIImageView!
     
     var incomingNewPostImage = UIImage()

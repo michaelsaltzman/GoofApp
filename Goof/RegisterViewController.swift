@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailUsernameTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var repeatPasswordTextfield: UITextField!
+    
+    let ref = Firebase(url: "https://goof-app.firebaseio.com")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +42,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         
         if emailUsername!.isEmpty || password!.isEmpty || repeatPassword!.isEmpty{
         
-            self.alert("Empty Fields")
+            self.alert("Empty Field(s)")
             return
         }
         
@@ -47,9 +51,48 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        NSUserDefaults.standardUserDefaults().setObject(emailUsername, forKey: "userEmail")
-        NSUserDefaults.standardUserDefaults().setObject(password, forKey: "userPassword")
-        NSUserDefaults.standardUserDefaults().synchronize()
+        
+        //let newProfile = Profile.init(inputUsername: emailUsername!, inputPassword: password!)
+        
+        //NSUserDefaults.standardUserDefaults().setObject(emailUsername, forKey: "userEmail")
+        //NSUserDefaults.standardUserDefaults().setObject(password, forKey: "userPassword")
+        //NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "userProfileImage")
+        
+        //NSUserDefaults.standardUserDefaults().synchronize()
+        
+        
+        // authenticates an email account in firebase
+        ref.createUser(emailUsername, password: password) { (error: NSError!) -> Void in
+            if error ==  nil{
+                self.ref.authUser(emailUsername, password: password, withCompletionBlock: { (error: NSError!, auth: FAuthData!) -> Void in
+                    
+                    if error != nil {
+                        self.alert("There has been an error")
+                    }else{
+                        //once authenticated, load username into data
+                        let fullUsername = emailUsername
+                        let fullUserameArr = fullUsername!.characters.split{$0 == "@"}.map(String.init)
+                        let justUsername = fullUserameArr[0]
+                        
+                        let newProfile = Profile.init(inputUsername: justUsername)
+
+                        let userRef = self.ref.childByAppendingPath(justUsername)
+                        
+                        userRef.setValue(newProfile.toAnyObject())
+                    }
+                    
+                })
+                
+            }else{
+                self.alert("There has been an error")
+            }
+        }
+        
+        
+        
+        
+        
+        
     
     }
     

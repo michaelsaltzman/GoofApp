@@ -11,7 +11,7 @@ import UIKit
 
 
 class Profile: NSObject {
-    var username: String?
+    var username: String!
     var password: String?
     var arrayOfPosts = [] // type Posts
     var friendsArray = [] // type Profile
@@ -19,10 +19,8 @@ class Profile: NSObject {
     var profileLastUpdated: NSDateFormatter?
     
     
-    init(inputUsername : String, inputPassword : String, profilePicture : UIImage) {
+    init(inputUsername : String) {
         self.username = inputUsername
-        self.password = inputPassword
-        self.profileImage = profilePicture
     }
     
     func updateProfileData(updatedUsername : String, updatedPassword : String) {
@@ -50,6 +48,12 @@ class Profile: NSObject {
     
     func deleteFriend(friendToDelete : Profile) {
         self.friendsArray.delete(friendToDelete)
+    }
+    
+    func toAnyObject() -> AnyObject {
+        return [
+            "username": username
+        ]
     }
     
 }

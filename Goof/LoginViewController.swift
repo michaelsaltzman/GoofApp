@@ -8,11 +8,13 @@
 
 import UIKit
 import LocalAuthentication
+import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailUsernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    let ref = Firebase(url: "https://goof-app.firebaseio.com")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "loggedIn")
             NSUserDefaults.standardUserDefaults().synchronize()
             self.dismissViewControllerAnimated(true, completion: nil)
+            
+            
+            
         }else{
             self.alert("Email or Password do not match")
         }
