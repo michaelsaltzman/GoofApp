@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bWL-IT-36L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bWL-IT-36L">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -68,6 +68,13 @@
                                 <state key="normal" title="To Feed"/>
                                 <connections>
                                     <segue destination="1Yc-hE-fBu" kind="show" id="Rzc-oy-u2O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n48-VG-KhO">
+                                <rect key="frame" x="264" y="439" width="65" height="30"/>
+                                <state key="normal" title="To Profile"/>
+                                <connections>
+                                    <segue destination="4fk-Fg-1Ab" kind="show" id="ZAo-1I-LkG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -299,23 +306,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aND-yd-ILa">
-                                <rect key="frame" x="20" y="72" width="128" height="128"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqa-xG-stL">
                                 <rect key="frame" x="156" y="72" width="424" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHx-yr-HCd">
+                                <rect key="frame" x="20" y="30" width="122" height="106"/>
+                                <state key="normal" title="Profile Picture"/>
+                                <connections>
+                                    <action selector="onProfileImageButtonTapped:" destination="4fk-Fg-1Ab" eventType="touchUpInside" id="erb-xc-Qy2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="rGe-YD-oGS"/>
+                    <connections>
+                        <outlet property="profilePictureButtonLabel" destination="JHx-yr-HCd" id="Ger-SY-uwK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPW-CN-4in" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3242" y="1029"/>
+            <point key="canvasLocation" x="2522" y="1013"/>
         </scene>
         <!--Post ImageVC-->
         <scene sceneID="Omb-2O-F3w">
@@ -378,6 +392,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="a3l-lH-BnU"/>
+        <segue reference="Rzc-oy-u2O"/>
     </inferredMetricsTieBreakers>
 </document>

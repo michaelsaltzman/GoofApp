@@ -7,9 +7,20 @@
 //
 
 import UIKit
+import ImagePicker
 
-class ProfileVC: UIViewController {
+class ProfileVC: UIViewController, ImagePickerDelegate {
+    
+    @IBOutlet weak var profilePictureButtonLabel: UIButton!
 
+    @IBAction func onProfileImageButtonTapped(sender: AnyObject) {
+        
+        let imagePickerController = ImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.imageLimit = 1
+        presentViewController(imagePickerController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +30,23 @@ class ProfileVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func wrapperDidPress(images: [UIImage]){
+        
+    }
+    
+    func cancelButtonDidPress(){
+        
+    }
+    
+    
+    func doneButtonDidPress(images: [UIImage]){
+        
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            self.profilePictureButtonLabel.setImage(images[0], forState: .Normal)
+        }
+        
     }
     
 
