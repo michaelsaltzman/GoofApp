@@ -16,6 +16,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+               tabBarController?.tabBar.hidden = true
         // Do any additional setup after loading the view.
     }
 

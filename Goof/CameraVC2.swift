@@ -16,7 +16,7 @@ class CameraVC2: UIViewController, ImagePickerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tabBarController?.tabBar.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
